@@ -2,4 +2,10 @@
 
 ComfyUI_windows_portable\ComfyUI\custom_nodes 에 넣기
 
-![2023-03-18 19 14 03](https://user-images.githubusercontent.com/20321215/226099455-14c0230a-769d-440e-a410-81cbecf2bbe8.png)
+## random_sampler_node.py
+
+![2023-03-18 20 53 37](https://user-images.githubusercontent.com/20321215/226104447-eadd1d15-437f-4a41-b989-511390236d13.png)
+
+## VAELoaderDecode.py
+
+![2023-03-18 20 52 27](https://user-images.githubusercontent.com/20321215/226104441-a13f49c6-c5be-4c70-b93e-f4ad984e9ff1.png)
