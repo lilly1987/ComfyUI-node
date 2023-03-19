@@ -23,7 +23,9 @@ class LoraLoaderText:
 
     def load_lora(self, model, clip, lora_name, strength_model, strength_clip):
         
-       
+        if lora_name is None or lora_name =="":
+            print("LoraLoaderText No")
+            return (strength_model, strength_clip)
         
         if lora_name.endswith('.safetensors') or lora_name.endswith('.ckpt') :
             lora_path = folder_paths.get_full_path("loras", lora_name)
@@ -39,8 +41,6 @@ class LoraLoaderText:
                     return (strength_model, strength_clip)
                 
         try:
-        
-
             model_lora, clip_lora = comfy.sd.load_lora_for_models(model, clip, lora_path, strength_model, strength_clip)
             return (model_lora, clip_lora)
         except Exception as e:

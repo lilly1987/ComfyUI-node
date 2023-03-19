@@ -5,7 +5,7 @@ import random
 
 def check_name(kind,name,supported_extensions):
     for ext in supported_extensions:
-        if name.endswith(ext):
+        if name.lower().endswith(ext):
             path = folder_paths.get_full_path(kind, name)
             if path is not None:
                 return path
