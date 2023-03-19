@@ -22,9 +22,30 @@ class LoraLoaderText:
     CATEGORY = "loaders"
 
     def load_lora(self, model, clip, lora_name, strength_model, strength_clip):
-        lora_path = folder_paths.get_full_path("loras", lora_name)
-        model_lora, clip_lora = comfy.sd.load_lora_for_models(model, clip, lora_path, strength_model, strength_clip)
-        return (model_lora, clip_lora)
+        
+       
+        
+        if lora_name.endswith('.safetensors') or lora_name.endswith('.ckpt') :
+            lora_path = folder_paths.get_full_path("loras", lora_name)
+            
+        else:
+            lora_path = folder_paths.get_full_path("loras", lora_name+'.safetensors')
+            print("LoraLoaderText lora_path : "+ lora_path)
+            if lora_path is None:
+                lora_path = folder_paths.get_full_path("loras", lora_name+'.ckpt')
+                print("LoraLoaderText lora_path : "+ lora_path)
+                if lora_path is None:
+                    print("LoraLoaderText No : "+ lora_name)
+                    return (strength_model, strength_clip)
+                
+        try:
+        
+
+            model_lora, clip_lora = comfy.sd.load_lora_for_models(model, clip, lora_path, strength_model, strength_clip)
+            return (model_lora, clip_lora)
+        except Exception as e:
+            print("LoraLoaderText Exception : "+ e)
+            return (strength_model, strength_clip)
 
 NODE_CLASS_MAPPINGS = {
     "LoraLoaderText": LoraLoaderText,

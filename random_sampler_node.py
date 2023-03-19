@@ -89,7 +89,7 @@ class Random_Sampler:
             model, 
             seed, 
             random.randint( min(steps_min,steps_max), max(steps_min,steps_max) ), 
-            random.randint( int(cfg_min)*2, int(cfg_max)*2) / 2 , 
+            random.randint( int(cfg_min*2) , int(cfg_max*2) ) / 2 , 
             sampler_name, 
             scheduler, 
             positive, 
