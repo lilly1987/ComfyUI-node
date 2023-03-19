@@ -1,6 +1,7 @@
 import os
 from folder_paths import supported_ckpt_extensions,supported_pt_extensions
 import folder_paths
+import random
 
 def check_name(kind,name,supported_extensions):
     for ext in supported_extensions:
@@ -19,3 +20,6 @@ def check_name_ckpt(name):
     
 def check_name_pt(kind,name):
     return check_name(kind,name,supported_pt_extensions)
+    
+def name_split_choice(name):
+    return random.choice(name.split('|'))

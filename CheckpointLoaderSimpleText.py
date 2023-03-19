@@ -26,7 +26,7 @@ class CheckpointLoaderSimpleText:
     CATEGORY = "loaders"
     
     def load_checkpoint(self, ckpt_name, output_vae=True, output_clip=True):
-        ckpt_path =check_name_ckpt(ckpt_name)
+        ckpt_path =check_name_ckpt(name_split_choice(ckpt_name))
         if ckpt_path is None:
             print(f"{ckpt_name} is none")
             return 
