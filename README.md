@@ -1,5 +1,9 @@
 # ComfyUI-node
 
+# this project merge to https://github.com/lilly1987/ComfyUI_node_Lilly 
+
+## install
+
 ComfyUI_windows_portable\ComfyUI\custom_nodes 에 넣기
 
 ## random_sampler_node.py
